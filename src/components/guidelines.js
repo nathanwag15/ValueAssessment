@@ -1,5 +1,5 @@
 import React from 'react';
-import Questions from './questions';
+
 
 
 export default function(props) {
@@ -27,5 +27,7 @@ export default function(props) {
             </div>
 
         )
-    } 
+    }  else {
+        return null
+    };
 }
