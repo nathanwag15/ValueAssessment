@@ -1,0 +1,42 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+
+    .app-wrapper {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .app {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .value-assesment-title {
+                color: $blue;
+            }
+
+            .spacer100 {
+                padding: 30px;
+            }
+        }
+    }
+}
+
+.guideline-wrapper{
+    color: $gold;
+    
+    .guideline {
+        padding: 10px;
+        font-weight: 900;
+    }
+}
