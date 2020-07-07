@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import Guidelines from './guidelines';
 import Questions from './questions';
+import TopBar from './topBar.js';
 
 export default class App extends Component {
   constructor() {
@@ -17,8 +18,8 @@ export default class App extends Component {
 
   guidelineGrabber() {
     if (this.state.start == true) {
-      return (
-        <button onClick={() => this.setState({start: false})}>Guidelines</button>
+      return (          
+          <button className="guideline-button" onClick={() => this.setState({start: false})}>Guidelines</button>
       )
     }
   }
@@ -35,12 +36,11 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
+        <TopBar />
+        <div className="spacer60"></div>
         {this.guidelineGrabber()}
-        <div className="value-assesment-title">
-          <h1>Value Assesment</h1>
-        </div>
+        
         <div className="content-wrapper">
-          <div className="spacer100"></div>
 
           <Guidelines start = {this.state.start}/>
           <Questions start = {this.state.start}/>

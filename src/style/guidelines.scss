@@ -1,9 +1,13 @@
 .guideline-wrapper{
-    color: $gold;
+    color: $black;
     
     .guideline {
         padding: 10px;
         font-weight: 900;
         font-size: 1.3em;
     }
+}
+
+.guideline-button {
+    @include buttonStyles;
 }

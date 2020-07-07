@@ -1,0 +1,21 @@
+.content-wrapper {
+    display: flex;
+    height: 95%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .spacer100 {
+        padding: 30px;
+    }
+
+   .start-button {
+       padding: 40px;                                       
+           
+        button {
+            @include buttonStyles;                
+   }
+}
+
+}

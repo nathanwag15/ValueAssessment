@@ -1,0 +1,44 @@
+.button-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .top{
+        padding: 10px;
+        .question-buttons{
+            font-size: 2em;
+            margin: 10px;
+            @include buttonStyles;
+            font-size: 1.5rem;
+            height: 70px;
+            width: 75px;
+        }
+    }
+
+    .bottom{
+        padding: 10px;
+        .restart-button{
+            @include buttonStyles;
+            color: $black;
+            border: 1px solid black;
+        }
+    }
+    
+}
+
+.test-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .directions {
+        font-size: 1.5rem;
+    }
+
+    .question-word {
+        font-size: 2.5rem;
+        font-family: 'Playfair Display', serif;
+        padding: 30px;
+    }
+}

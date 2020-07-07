@@ -1,0 +1,14 @@
+@mixin buttonStyles {
+        padding: 13px 25px;
+        color: $red;
+        background-color: $white;
+        border: 1px solid $red;                       
+        font-size: 15px;
+        transition: .3s;   
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+
+    
+}
