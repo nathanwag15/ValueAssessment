@@ -34,8 +34,12 @@ export default class Questions extends Component {
     }
 
     answerSaver = (num) => {
-        this.state.new_values.push(num)
-        this.setState({counter: this.state.counter + 1})
+        this.setState({
+            counter: this.state.counter + 1})
+        this.setState({
+            new_values: this.state.new_values.push(num)
+        })
+        console.log(this.state.new_values)
     }
 
     render(){
@@ -61,6 +65,7 @@ export default class Questions extends Component {
                                 <button className="restart-button"onClick = {() => this.setState({counter: 0})}>Restart</button>
                             </div>
                         </div>
+                        {this.state.counter}/64
                     </div>
                 )
             }else {
