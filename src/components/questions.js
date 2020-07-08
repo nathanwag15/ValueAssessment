@@ -13,7 +13,7 @@ export default class Questions extends Component {
                         "Open-mindedness","Passion", "Patience", "Persistence", "Quality", "Recognition", "Respect", "Risk-Taking", "Romance", "Safety", "Self-awareness",
                         "Self-development", "Self-control", "Sensuality", "Skillfulness", "Spirituality", "Supportive", "Trust", "Urgency", "Wealth"],
                 counter: 0,
-                values_num: [0] * 64,
+                values_num: [0] * 63,
                 values_ordered: {
                     five: [],
                     four: [],
@@ -64,7 +64,7 @@ export default class Questions extends Component {
 
     render(){
         if (this.props.start == true ) {
-            if (this.state.counter <= 64) {
+            if (this.state.counter <= 63) {
                 return(
                     <div className="test-wrapper">
                         <div className="directions">
@@ -82,12 +82,12 @@ export default class Questions extends Component {
                                 <button className="question-buttons" onClick = {() => this.answerSaver(5)}>5</button>
                             </div>
                         </div>
-                        {this.state.counter}/64
+                        {this.state.counter}/63
                     </div>
                 )
             }else {
                 return(
-                    <Test values = {this.state.values} new_values = {this.state.new_values} />
+                    <Test values_ordered = {this.state.values_ordered} />
                 )
             }
         }else {

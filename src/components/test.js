@@ -9,23 +9,30 @@ export default class Test extends Component {
         }
     }
 
-    listReducer() {
-       const list_of_num = []
-       const i = 0
-       while (i <= 64) {
-           if (this.props.new_values[i] == 5) {
-               list_of_num.push(this.props.values[i])
-           }
-       } 
-       this.setState({
-           main_list: list_of_num
-       })
+    shortListGenerator() {
+       var list_of_num = []
+       if (list_of_num.length < 7){
+        list_of_num = this.props.values_ordered.five
+       }
+       if (list_of_num.length < 7) {
+           list_of_num = list_of_num.concat(this.props.values_ordered.four)
+       }
+       if (list_of_num.length < 7) {
+           list_of_num = list_of_num.concat(this.props.values_ordered.three)
+       }
+       if (list_of_num.length < 7) {
+           list_of_num = list_of_num.concat(this.props.values_ordered.two)
+       }
+       if (list_of_num.length < 7) {
+           list_of_num = list_of_num.concat(this.props.values_ordered.one)
+       }
+       console.log(list_of_num)
     }
 
     render() {
         return (
             <div>
-                {this.listReducer()}
+                {this.shortListGenerator()}
             </div>
         )
     }
