@@ -15,14 +15,6 @@
         }
     }
 
-    .bottom{
-        padding: 10px;
-        .restart-button{
-            @include buttonStyles;
-            color: $black;
-            border: 1px solid black;
-        }
-    }
     
 }
 
@@ -40,5 +32,6 @@
         font-size: 2.5rem;
         font-family: 'Playfair Display', serif;
         padding: 30px;
+        letter-spacing: 7px;
     }
 }

@@ -17,7 +17,9 @@ export default class Test extends Component {
                list_of_num.push(this.props.values[i])
            }
        } 
-       this.state.main_list.push(list_of_num)
+       this.setState({
+           main_list: list_of_num
+       })
     }
 
     render() {

@@ -6,7 +6,7 @@ export default class Questions extends Component {
         super(props);
 
         this.state = {
-                values: ["Accountability", "Achievement", "Adventure", "Assertiveness", "Authenticity", "Authority", "Balance", "Beauty", "Carrer",
+                values: ["Accountability", "Achievement", "Adventure", "Assertiveness", "Authenticity", "Authority", "Balance", "Beauty", "Career",
                         "Caring", "Challenge", "Compassion", "Connection", "Contribution", "Cooperation", "Courage", "Creativity", "Curiosity", "Efficiency", "Encouragement", "Equality",
                         "Excitement", "Faith", "Fitness", "Flexibility", "Freedom", "Friendliness", "Forgiveness", "Fun", "Generosity", "Gratitude", "Honesty", "Humility",
                         "Independence", "Integrity", "Intimacy", "Justice", "Kindness", "Learning", "Legacy", "Loyalty", "Love", "Mindfulness", "Organized",
@@ -14,7 +14,13 @@ export default class Questions extends Component {
                         "Self-development", "Self-control", "Sensuality", "Skillfulness", "Spirituality", "Supportive", "Trust", "Urgency", "Wealth"],
                 counter: 0,
                 values_num: [0] * 64,
-                new_values: []
+                values_ordered: {
+                    five: [],
+                    four: [],
+                    three: [],
+                    two: [],
+                    one: []
+                }
         }
 
         this.questionMaker = this.questionMaker.bind(this);
@@ -34,10 +40,26 @@ export default class Questions extends Component {
     }
 
     answerSaver = (num) => {
+        var values_ordered_temp = this.state.values_ordered
+        const values = this.state.values
+        var counter = this.state.counter
+
+        if (num == 1) {
+            values_ordered_temp.one.push(values[counter]);
+        } else if (num == 2) {
+            values_ordered_temp.two.push(values[counter]);
+        } else if (num == 3) {
+            values_ordered_temp.three.push(values[counter]);
+        } else if (num == 4) {
+            values_ordered_temp.four.push(values[counter]);
+        } else if (num == 5) {
+            values_ordered_temp.five.push(values[counter]);
+        };
+         
+        console.log(this.state.values_ordered)
+        this.setState({ values_ordered: values_ordered_temp})
         this.setState({
             counter: this.state.counter + 1})
-        this.state.new_values.push(num)
-        console.log(this.state.new_values)
     }
 
     render(){
@@ -58,9 +80,6 @@ export default class Questions extends Component {
                                 <button className="question-buttons"onClick = {() => this.answerSaver(3)}>3</button>
                                 <button className="question-buttons" onClick = {() => this.answerSaver(4)}>4</button>
                                 <button className="question-buttons" onClick = {() => this.answerSaver(5)}>5</button>
-                            </div>
-                            <div className="bottom">
-                                <button className="restart-button"onClick = {() => this.setState({counter: 0})}>Restart</button>
                             </div>
                         </div>
                         {this.state.counter}/64
