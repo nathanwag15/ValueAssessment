@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
+import Compiler from './compiler';
 
 export default class Test extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            main_list: []
-        }
     }
 
     shortListGenerator() {
@@ -27,17 +25,15 @@ export default class Test extends Component {
            list_of_num = list_of_num.concat(this.props.values_ordered.one)
        }
        console.log(list_of_num)
-       return(
-           <div>
-              {list_of_num}
-           </div>
-       )
-    }
+       return(list_of_num)
+       }
+    
 
+   
     render() {
-        return (
+        return(
             <div>
-                {this.shortListGenerator()}
+                <Compiler list_of_num = {this.shortListGenerator()} />                
             </div>
         )
     }

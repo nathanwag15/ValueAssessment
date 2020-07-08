@@ -13,7 +13,7 @@ export default class Questions extends Component {
                         "Open-mindedness","Passion", "Patience", "Persistence", "Quality", "Recognition", "Respect", "Risk-Taking", "Romance", "Safety", "Self-awareness",
                         "Self-development", "Self-control", "Sensuality", "Skillfulness", "Spirituality", "Supportive", "Trust", "Urgency", "Wealth"],
                 counter: 0,
-                values_num: [0] * 63,
+
                 values_ordered: {
                     five: [],
                     four: [],
@@ -83,6 +83,7 @@ export default class Questions extends Component {
                             </div>
                         </div>
                         {this.state.counter}/63
+                        {this.values_num}
                     </div>
                 )
             }else {

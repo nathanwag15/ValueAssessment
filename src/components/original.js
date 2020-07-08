@@ -31,8 +31,8 @@ var sortstring = function (a, b)    {
 
 function findFirstValues() {
   console.log(values.length + " vs " + valuesNumber.length);
-  if (firstValues.length < 7) {
-    firstValues = firstValues.concat(all_num(5));
+  if (list_of_num.length < 7) {
+    list_of_num = firstValues.concat(all_num(5));
   }
   if (firstValues.length < 7) {
     for(var j=4; j > 0; j--) {
