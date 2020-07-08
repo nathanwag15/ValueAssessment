@@ -27,6 +27,11 @@ export default class Test extends Component {
            list_of_num = list_of_num.concat(this.props.values_ordered.one)
        }
        console.log(list_of_num)
+       return(
+           <div>
+              {list_of_num}
+           </div>
+       )
     }
 
     render() {
