@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CountWin from './count-win';
 
 export default class Compiler extends Component {
     constructor(props){
@@ -17,17 +18,16 @@ export default class Compiler extends Component {
 
     objectMaker() {
         var list_of_num = this.props.list_of_num
-        var winObj = this.state.winObj
+        var winObj = this.state.winObj 
         for (var i = 0; i < list_of_num.length; i++) {
             winObj[list_of_num[i]] = 0
         }
-        
         this.setState({winObj: winObj})
-        console.log(this.state.winObj)
+        
     }
 
     testGenerator() {
-        var counter = this.state.counter        
+        var counter = this.state.counter      
         this.setState({
             first_word: this.props.list_of_num[0]
         });
@@ -37,24 +37,17 @@ export default class Compiler extends Component {
         if (counter === this.props.list_of_num.length - 1 ) {
             this.setState({counter: 1})
             this.props.list_of_num.splice(0, 1);
-            console.log(this.props.list_of_num)
         } else {
             this.setState({counter: this.state.counter + 1})
-            return(
-                <div>
-                   
-                </div>
-            )
         }
     }
+
 
     clickFunctions(winning_value) {
         var winObj = this.state.winObj
         winObj[winning_value] += 1
         this.setState({winObj: winObj})
         this.testGenerator()
-        console.log(this.state.winObj)
-
     }
 
     startClickFunctions(){
@@ -70,8 +63,8 @@ export default class Compiler extends Component {
     displayStart() {
         if(this.state.status==="not_started"){
             return(
-                <div>
-                    <button onClick={() => this.startClickFunctions()}>start next part</button>
+                <div className = "start-button">
+                    <button  onClick={() => this.startClickFunctions()}>start next part</button>
                 </div>
             )
         }
@@ -80,9 +73,9 @@ export default class Compiler extends Component {
     displayQuestions(){
         if(this.state.status==="start") {
             return(
-                <div>
-                    <button onClick={() => this.clickFunctions(this.state.first_word)} >{this.state.first_word}</button>
-                    <button onClick={() => this.clickFunctions(this.state.second_word)} >{this.state.second_word}</button>
+                <div className="compare-button-wrapper">
+                    <button className="compare-button" onClick={() => this.clickFunctions(this.state.first_word)} >{this.state.first_word}</button>
+                    <button className="compare-button" onClick={() => this.clickFunctions(this.state.second_word)} >{this.state.second_word}</button>
                 </div>
             )
         }
@@ -92,7 +85,8 @@ export default class Compiler extends Component {
     return(
         <div>
             {this.displayStart()}
-            {this.displayQuestions()}
+            {this.props.list_of_num.length > 1?(this.displayQuestions()) : null}
+            {this.props.list_of_num.length === 1?(<CountWin winObj = {this.state.winObj} />): null}
             
         </div>
     )}

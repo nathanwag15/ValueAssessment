@@ -5,10 +5,15 @@ export default class Test extends Component {
     constructor(props){
         super(props);
 
+        this.state = {
+            list_of_num: []
+        }
+
     }
 
     shortListGenerator() {
        var list_of_num = []
+       var stable_num = []
        if (list_of_num.length < 7){
         list_of_num = this.props.values_ordered.five
        }
@@ -24,16 +29,15 @@ export default class Test extends Component {
        if (list_of_num.length < 7) {
            list_of_num = list_of_num.concat(this.props.values_ordered.one)
        }
-       console.log(list_of_num)
        return(list_of_num)
        }
     
-
    
     render() {
         return(
-            <div>
-                <Compiler list_of_num = {this.shortListGenerator()} />                
+            <div>                
+                <Compiler 
+                   list_of_num = {this.shortListGenerator()}/>                
             </div>
         )
     }
