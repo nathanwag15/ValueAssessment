@@ -39,7 +39,7 @@ export default class CountWin extends Component{
     console.log(this.props.winObj)    
     for (const [key, value] of Object.entries(this.props.winObj)) {
         // console.log(`${key}: ${value}`);
-        if (results.length >= 7) {
+        if (results.length == 7) {
             for (var test = 0; test < results.length; test ++){
                 var compare = results[test]
                 console.log(compare)
