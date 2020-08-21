@@ -24,51 +24,75 @@ export default class CountWin extends Component{
         console.log(this.props.winObj[win]) 
    }
 
-   tieBreaker(valueOne, valueTwo, location, results){
-            return(
-                <div className="compare-button-wrapper">
-                    <button className="compare-button" onClick={() => this.winner(valueOne, location, results)} >{valueOne}</button>
-                    <button className="compare-button" onClick={() => this.winner(valueTwo, location, results)} >{valueTwo}</button>
-                </div>
-            )
+   resultsMaker(newWinObj, results){
+    for (const [key, value] of Object.entries(newWinObj)) {
+        var finalKey = key
+        console.log(finalKey)
+        var finalValue = value
+            for (const [key, value] of Object.entries(newWinObj)){
+                if (value > finalValue) {
+                    finalValue = value
+                    finalKey = key
+                    console.log(`${finalKey}: ${finalValue}`)
+                } 
+            }
+        var add = "yes"
+        for (var i = 0; i < results.length; i ++){
+            console.log(results[i])
+            if (results[i] == finalKey){
+                add = "no"
+            } 
+        }
+        
+        newWinObj[finalKey] = 0
+        if (add == "yes"){
+            results.push(finalKey)
+            console.log(add)
+        }
+        console.log(newWinObj)
+        console.log(results)
+    }
+
+    if (results.length < 7){
+        this.resultsMaker(newWinObj, results)
+    }
+    return( results )
    }
 
    winFinder(){
     var results = []
-    var val
-    console.log(this.props.winObj)    
-    for (const [key, value] of Object.entries(this.props.winObj)) {
-        // console.log(`${key}: ${value}`);
-        if (results.length == 7) {
-            for (var test = 0; test < results.length; test ++){
-                var compare = results[test]
-                console.log(compare)
-
-                if (this.props.winObj[compare] < value){
-                    results[test] = key;
-                    break;
-                } else if (this.props.winObj[compare] = value){
-                    console.log(value, key, compare, this.props.winObj[compare])
-                    val = this.tieBreaker(compare, key, test, results)
-                    break;
-                } else if (this.props.winObj[compare] > value){
-                    break;
-                } else {
-                    val = this.state.results
-                }
-            }
-        } else {
-            results.push(key)
-        }
-        
+    var newWinObj = this.props.winObj
+    console.log(this.props.winObj)  
+    this.resultsMaker(newWinObj, results)  
     
-    }
     return(
         <div>
-            {val}
+            <div>
+                {results[0]}
+            </div>
+            <div>
+                {results[1]}
+            </div>
+            <div>
+                {results[2]}
+            </div>
+            <div>
+                {results[3]}
+            </div>
+            <div>
+                {results[4]}
+            </div>
+            <div>
+                {results[5]}
+            </div>
+            <div>
+                {results[6]}
+            </div>
         </div>
     )
-    };
+}
+        
+    
 
    render(){
     return(

@@ -82,7 +82,7 @@ export default class Questions extends Component {
                                 <button className="question-buttons" onClick = {() => this.answerSaver(5)}>5</button>
                             </div>
                         </div>
-                        {this.state.counter}/63
+                        {this.state.counter}/64
                         {this.values_num}
                     </div>
                 )
