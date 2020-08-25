@@ -62,10 +62,13 @@ export default class Questions extends Component {
             counter: this.state.counter + 1})
     }
 
+    
+
     render(){
         if (this.props.start == true ) {
             if (this.state.counter <= 63) {
                 return(
+                    
                     <div className="test-wrapper">
                         <div className="directions">
                             Select a Number

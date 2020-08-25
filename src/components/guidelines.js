@@ -23,10 +23,11 @@ export default function(props) {
                 </div>
                 <div className="guideline">
                     For the following enter a number 1-5. 5 being most important. 1 being the least important.
-                </div>
+                </div>                
             </div>
 
         )
+
     }  else {
         return null
     };

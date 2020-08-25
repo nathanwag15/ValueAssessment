@@ -63,8 +63,18 @@ export default class Compiler extends Component {
     displayStart() {
         if(this.state.status==="not_started"){
             return(
-                <div className = "start-button">
-                    <button  onClick={() => this.startClickFunctions()}>start next part</button>
+                <div className = "stage-two-beginning">
+                    <div className="guideline-wrapper"> 
+                        <div className="guideline">
+                            The next questions will give 2 values. 
+                        </div>
+                        <div className="guideline">
+                            Choose the value that is more important to you.
+                        </div>            
+                    </div>
+                    <div className = "start-button">
+                        <button  onClick={() => this.startClickFunctions()}>start next part</button>
+                    </div>
                 </div>
             )
         }

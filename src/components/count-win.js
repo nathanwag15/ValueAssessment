@@ -66,26 +66,29 @@ export default class CountWin extends Component{
     this.resultsMaker(newWinObj, results)  
     
     return(
-        <div>
-            <div>
+        <div className="results-wrapper">
+            <div className="result-title">
+                Here is your top 7 values ordered by importance from top to bottom:
+            </div>
+            <div className="result">
                 {results[0]}
             </div>
-            <div>
+            <div className="result">
                 {results[1]}
             </div>
-            <div>
+            <div className="result">
                 {results[2]}
             </div>
-            <div>
+            <div className="result">
                 {results[3]}
             </div>
-            <div>
+            <div className="result"> 
                 {results[4]}
             </div>
-            <div>
+            <div className="result">
                 {results[5]}
             </div>
-            <div>
+            <div className="result">
                 {results[6]}
             </div>
         </div>
