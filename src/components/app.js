@@ -27,9 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-        <TopBar />
-        <div className="spacer60"></div>
-        
+        <TopBar />       
         <div className="content-wrapper">
 
           <Guidelines start = {this.state.start}/>
