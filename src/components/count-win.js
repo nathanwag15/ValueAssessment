@@ -67,7 +67,7 @@ export default class CountWin extends Component{
     
     return(
         <div className="results-wrapper">
-            <div className="spacer60"></div>
+            <div className="spacer100"></div>
             <div className="result-title">
                 Here is your top 7 values ordered by importance from top to bottom:
             </div>
