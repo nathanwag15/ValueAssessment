@@ -1,0 +1,93 @@
+@media (max-width: 615px) {
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 100%;
+        
+    
+        
+    }
+    .spacer60 {
+        padding: 20px;
+    }
+    
+    .guideline-wrapper{
+        color: $black;
+        padding: 0px;
+        width: 95vw;
+        
+        .guideline {
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.3em;
+        }
+    }
+
+    .button-wrapper{
+        
+    
+        .top{
+            padding: 10px;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 80vw;
+    
+            .question-buttons{
+                font-size: 2em;
+                margin: 10px;
+                @include buttonStyles;
+                font-size: 1.5rem;
+                height: 70px;
+                width: 75px;
+                justify-self: center;
+            }
+        }
+    
+        
+    }
+
+    .test-wrapper {
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        .directions {
+            font-size: 1.5rem;
+            padding-top: 10px;
+        }
+
+        .question-word {
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            padding: 0px;
+            letter-spacing: 7px;
+        }
+    
+    }
+
+    .compare-button-wrapper{
+        width: 320px;
+        height: 100%; 
+        .compare-button{
+            @include buttonStyles;
+            height: 150px;
+            width: 320px;
+            font-size: 2em;
+            border: 1px solid $red;
+            background-color: $white;
+            color: $black;
+            outline: none;
+        }
+    }
+
+    .start-button {
+        padding: 20px;  
+
+    }
+
+ 
+}
