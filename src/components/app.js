@@ -28,7 +28,7 @@ export default class App extends Component {
     return (
       <div className='app'>      
         <div className="content-wrapper">
-          <div className="spacer60"></div>
+          <div className="spacer"></div>
 
           <Guidelines start = {this.state.start}/>
           <Questions start = {this.state.start}/>
