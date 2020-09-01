@@ -27,9 +27,10 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>      
-        <TopBar />
+        {/* <TopBar /> */}
+        <div className="spacer"></div>
         <div className="content-wrapper">
-          <div className="spacer"></div>
+          
           
           
 
