@@ -7,9 +7,7 @@ export default function topBar() {
             <div className="logo-wrapper">
                 <img className="image" src={logo} />
             </div>
-            <div className="value-assesment-title">
-                <h2>Value Assesment</h2>
-            </div>
+            
         </div>
     )
 }
