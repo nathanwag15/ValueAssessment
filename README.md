@@ -1,5 +1,3 @@
-# React/Redux/Router Starter Project
+# Value Assessment
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
-
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+A Comprehensive Test Designed to help you find your top 7 values. 
