@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Test from './test';
+import Test from './comparisonTest';
 
 export default class Questions extends Component {
     constructor(props){

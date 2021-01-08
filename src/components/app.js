@@ -1,49 +1,47 @@
 import React, { Component } from 'react';
-
-
-import Guidelines from './guidelines';
-import Questions from './questions';
-import TopBar from './topBar.js';
+import Assessment from './assessment';
+import Form from './form';
 
 export default class App extends Component {
-  constructor() {
-    super();
+    constructor(){
+        super();
 
-    this.state = {
-      start: false
+        this.state = {
+            formCompleted: false
+        }
+
+        // this.handleChange = this.handleChange.bind(this)
+        this.handleGenerate = this.handleGenerate.bind(this)
     }
 
-  }
-
- 
-
-  buttonMaker() {
-    if (this.state.start == false) {
-      return (
-      <button onClick={() => this.setState({start: true})}>Start</button>)
+    handleGenerate(){
+        this.setState({
+            formCompleted: true
+        })
     }
-  }
 
-  render() {
-    return (
-      <div className='app'>      
-        {/* <TopBar /> */}
-        <div className="spacer"></div>
-        <div className="content-wrapper">
-          
-          
-          
+    render () {
+        return(
+            <div>
 
-          <Guidelines start = {this.state.start}/>
-          <Questions start = {this.state.start}/>
-
-          <div className="start-button">
-            {this.buttonMaker()}
-          </div>
-
-        </div>
-        
-      </div>
-    );
-  }
+            {
+                this.state.formCompleted ? 
+                    <div>
+                        <Assessment />
+                    </div>
+                :
+                    <div>
+                        <h1>Opening Form</h1>
+                        {/* <DatePicker 
+                            selected={this.state.startDate}
+                            onChange={this.handleChange}
+                        /> */}
+                        <a onClick={this.handleGenerate}>Generate Countdown</a>
+                    </div>
+            }
+            </div>
+        )
+    }
 }
+
+

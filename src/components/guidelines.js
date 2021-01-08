@@ -3,7 +3,6 @@ import React from 'react';
 
 
 export default function(props) {
-    if (props.start == false) {
         return (
             <div className="guideline-wrapper">
                 <div className="guideline">
@@ -28,7 +27,4 @@ export default function(props) {
 
         )
 
-    }  else {
-        return null
-    };
 }
