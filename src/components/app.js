@@ -32,6 +32,25 @@ export default class App extends Component {
                 :
                     <div>
                         <h1>Opening Form</h1>
+                        <form onSubmit={this.handleSubmit} className="opening-form">
+                            <div>
+                                <input 
+                                    type="text"
+                                    name="first-name"
+                                    placeholder="First Name"
+                                />
+                                <input 
+                                    type="text"
+                                    name="phone-number"
+                                    placeholder="Phone Number"
+                                />
+                                <input 
+                                    type="text"
+                                    name="email"
+                                    placeholder="Email"
+                                />
+                            </div>
+                        </form>
                         {/* <DatePicker 
                             selected={this.state.startDate}
                             onChange={this.handleChange}
