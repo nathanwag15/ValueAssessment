@@ -1,0 +1,72 @@
+VALUE ASSESMENT TABLE
+Fields
+Each record in the Value Assesment table contains the following fields:
+
+FIELD NAMETYPEDESCRIPTION
+First NameText
+string
+A single line of text.
+ 
+EXAMPLE VALUES
+"foo", "bar"
+
+Phone
+Phone number
+string
+A telephone number, e.g. "(415) 555-9876".
+ 
+EXAMPLE VALUES
+"(415) 555-9876"
+
+EmailEmail
+string
+A valid email address.
+ 
+EXAMPLE VALUES
+"support@example.com", "sales@example.com"
+Values
+Long text (with rich text formatting enabled)
+string
+A Markdown-inspired markup language.
+Learn more about using Markdown in long text's rich text formatting API.
+ 
+EXAMPLE VALUE
+[
+    {
+        "type": "paragraph",
+        "value": [
+            {
+                "type": "paragraphLine",
+                "value": [
+                    {
+                        "type": "text",
+                        "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et nulla vulputate, sollicitudin risus sed, suscipit sapien. "
+                    },
+                    {
+                        "type": "text",
+                        "value": "Donec ac tempus velit, nec efficitur augue. Donec fermentum ex cursus, tincidunt justo ac, bibendum turpis",
+                        "attributes": {
+                            "bold": true,
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "paragraphLine",
+                "value": [
+                    {
+                        "type": "mention",
+                        "value": {
+                            "userName": "Waffles Wags-a-lot",
+                            "userId": "usrR2o0pNsHC4FdrT",
+                            "mentionId": "menE1i9oBaGX3DseR"
+                        },
+                        "attributes": {
+                            "bold": true
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
